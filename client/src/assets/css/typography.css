@@ -1,0 +1,45 @@
+@layer components {
+
+  /* Heading 1 */
+  .h1 {
+    @apply text-4xl font-bold;
+  }
+
+  /* Heading 2 */
+  .h2 {
+    @apply text-3xl font-bold;
+  }
+
+  /* Heading 3 */
+  .h3 {
+    @apply text-2xl font-bold;
+  }
+
+  /* Heading 4 */
+  .h4 {
+    @apply text-xl font-bold;
+  }
+
+  /* Heading 5 */
+  .h5 {
+    @apply text-lg font-bold;
+  }
+
+  /* Heading 6 */
+  .h6 {
+    @apply text-base font-bold;
+  }
+
+  .link,
+  a {
+    @apply cursor-pointer capitalize  underline transition-colors underline-offset-4;
+
+    &:hover {
+      @apply text-blue-500;
+    }
+  }
+
+  .btn-primary {
+    @apply flex w-full justify-center rounded bg-blue-700 p-3 font-medium text-white hover:bg-opacity-90;
+  }
+}

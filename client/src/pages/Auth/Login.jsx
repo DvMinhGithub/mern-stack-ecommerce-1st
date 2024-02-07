@@ -8,7 +8,7 @@ import Layout from "@/components/Layout/Layout";
 import "./auth.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email, password });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const { email, password } = formData;
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/login", { email, password });
+      const res = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/api/v1/auth/login`, { email, password });
       if (res.data.success) {
         toast.success("Login successful");
         navigate("/");
@@ -62,6 +62,7 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             LOGIN
           </button>
+          <p className="w-fit pt-4 mx-auto">New Customer? <a href="/register">Register Now</a></p>
         </form>
       </div>
     </Layout>
